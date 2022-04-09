@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>My application page</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Babylonica&display=swap" rel="stylesheet">
+  </head> 
+  <header>
+    <div id="nav-bar">
+      <h1>modanova</h1>
+      <div ><p>home |</p>
+      </div>
+      <div >
+        <p>git hub |</p>
+      </div>
+      <div ><p>tribute page |</p>
+      </div>
+    </div>
+  </header>
+  <body>
+    <h4 class="title">A little bit about me...</h4>
+    <div class="initials">
+      <h1 > MD</h1>
+    </div>
+    <div class="description">
+      <p>Working as a teacher for a few years has been a dream come true. But I would love to explore another passion of mine: <strong>DESIGN</strong>!</p>
+      <p>In the past, I taught myself to use Photoshop and Gimp for image manipulation. I have studied some front-end and love to make things in general.  
+        Problem solving is a great passion and I view webdesign as a combination of a few passions of mine.</p>
+    </div>
+    <div class="divider-box"> .
+    </div>
+    <div id="projects">
+      <div>Completed Projects</div>
+      <div id="project1">
+        <div id="enter-username-title"><p>Hello, <name id="user">User</name>!</p></div>
+        <div id="enter-username">
+          <div class="usinput-container">
+            <ul>Please enter your username containing</ul><br>
+            <div class="rules">
+              <li>one lowercase letter</li>
+              <li>one uppercase letter</li>
+              <li>two numbers</li>
+            </div>
+            <label for='string'>Username</label>
+            <input id='string' name='string' onkeyup="getInput()"></input>
+            <button for='string' type='button' onclick="checkUsername()" >Submit</button>
+          </div>
+          <div class="password-indicator">
+            <div id="bar1" onclick="colorScheme()"></div>
+            <div id="bar2" onclick="colorScheme()"> </div>
+            <div id="bar3" onclick="colorScheme()"> </div>
+          </div>
+        </div>
+        <button for='reset' type='button' id="reset-username">Reset Username</button>
+      </div>
+      <div class="gallery">
+        <div class="nr1">1
+        </div>
+        <div class="nr2">2
+        </div> 
+        <div class="nr3">3
+        </div> 
+        <div class="nr4">4
+        </div> 
+        <div class="nr5">5
+        </div> 
+        <div class="nr6">6
+        </div> 
+      </div> 
+    </div> 
+  </body>
+  <footer>
+  </footer>
+</html>
+
+<!-- 
+<div >
+</div> 
+-->
