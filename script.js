@@ -74,12 +74,13 @@ function colorScheme(highlight, count) {
 //Enter Username JS
 
 // Greeting
-const user = document.getElementById('user');
-const enterUsername = document.getElementById('enter-username'); 
-const button = document.getElementById('reset-username');
-const project1 = document.getElementById('project1');
+
 
 function greetUser(name) {
+  var user = document.getElementById('user');
+  var enterUsername = document.getElementById('enter-username'); 
+  var button = document.getElementById('reset-username');
+  var project1 = document.getElementById('project1');
   user.innerHTML = name;
   enterUsername.style.display = 'none'; 
   button.style.display = 'block';
@@ -87,8 +88,12 @@ function greetUser(name) {
 }
 
 function resetUsername() {
+  var user = document.getElementById('user');
+  var enterUsername = document.getElementById('enter-username'); 
+  var button = document.getElementById('reset-username');
+  var project1 = document.getElementById('project1');
   user.innerHTML = 'User';
-  enterUsername.style.display = 'none'; 
-  button.style.display = 'block';
-  project1.style.display = 'flex';
+  enterUsername.style.display = 'block'; 
+  button.style.display = 'none';
+  project1.style.display = 'block';
 }
