@@ -97,3 +97,31 @@ function resetUsername() {
   button.style.display = 'none';
   project1.style.display = 'block';
 }
+
+// Bulls and Cows
+
+function startGame() {
+  let initialNr = document.getElementById("digit1").value
+  + document.getElementById("digit2").value
+  + document.getElementById("digit3").value
+  + document.getElementById("digit4").value;
+  alert('thanks, your number is:  ' + initialNr);
+  return initialNr;
+}
+
+function checkLen() {
+  let id = 'digit';
+  for (let nr = 1; nr <=4; nr ++) {
+    var el = document.getElementById(id+nr).value;
+  if (el.length > 1) {
+    document.getElementById(id+nr).value = el.slice(el.length - 1);  
+  }
+  }
+}
+
+// change id="your-nr1"
+
+function changeYourNr() {
+  document.getElementById('your-nr1').value = startGame();
+  
+}
