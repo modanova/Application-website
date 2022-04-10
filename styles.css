@@ -37,7 +37,7 @@ h1 {
 }
 header {
   border-bottom: 1px solid black;
-  background-image: url(/pic/flowers.png);
+  background-image: url(../pic/flowers.png);
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -130,22 +130,27 @@ header {
   border: 2px solid pink;
   border-radius: 5%;
 }
+#project2 {
+  width: 80%;
+  margin: 0 10%;
+}
 #cb-game > * {
   border: 2px solid black;
   font-size: 26px;
 }
-
 .turn {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  height: 50px; 
+}
+#attempts {
+  padding: 10px 0;
 }
 .box {
-  display: flex;
+  display: inline-flex;
 }
-
 .box1 {
   width: 10%;
   display: flex;
 }
-
