@@ -100,6 +100,7 @@ function resetUsername() {
 // Bulls and Cows
 
 function startGame() {
+  generateNumber();
   let initialNr = 0;
      initialNr = document.getElementById("digit1").value[0]
     + document.getElementById("digit2").value[0]
@@ -122,10 +123,30 @@ function checkLen() {
 // onbeforeprint="changeYourNr(document.getElementById(''))";
 var round = 1;
 function changeYourNr(nr) {
+  if (round <= 6) {
   let numberField = document.getElementById("your-nr" + round);
  numberField.innerHTML = nr;
  document.getElementById("turn"+round).style.display = "flex";
  round++;
- // if > 6 gameover or win
+  }
+  else {
+    // if > 6 gameover or win
+  }
+}
+
+// Cows and Bulls Clue giving
+var gameNumber = 0;
+function generateNumber() {
+  gameNumber = Math.floor(Math.random() * 10000);
+  if (gameNumber < 1000 && gameNumber > 99) {
+    gameNumber = "0" + gameNumber.toString();
+  }
+  else if (gameNumber < 100 && gameNumber > 9) {
+    gameNumber = "00" + gameNumber.toString();
+  }
+  else if (gameNumber < 10) {
+    gameNumber = "000" + gameNumber.toString();
+  }
+  console.log(gameNumber);
 }
 
