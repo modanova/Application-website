@@ -110,7 +110,7 @@ function startGame() {
 }
 function checkLen() {
   let id = 'digit';
-  for (let nr = 1; nr <=4; nr ++) {
+  for (let nr = 1; nr <= 4; nr++) {
     var el = document.getElementById(id+nr).value;
   if (el.length > 1) {
     document.getElementById(id+nr).value = el.slice(el.length - 1);  
@@ -124,7 +124,8 @@ var round = 1;
 function changeYourNr(nr) {
   let numberField = document.getElementById("your-nr" + round);
  numberField.innerHTML = nr;
- //document.getElementById(turn+nr).style.display = "inline";
+ document.getElementById("turn"+round).style.display = "flex";
  round++;
  // if > 6 gameover or win
 }
+
