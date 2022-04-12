@@ -101,10 +101,10 @@ function resetUsername() {
 
 function startGame() {
   let initialNr = 0;
-     initialNr = document.getElementById("digit1").value
-    + document.getElementById("digit2").value
-    + document.getElementById("digit3").value
-    + document.getElementById("digit4").value;
+     initialNr = document.getElementById("digit1").value[0]
+    + document.getElementById("digit2").value[0]
+    + document.getElementById("digit3").value[0]
+    + document.getElementById("digit4").value[0];
     // alert('thanks, your number is:  ' + initialNr);
     changeYourNr(initialNr);
 }

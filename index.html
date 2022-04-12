@@ -64,10 +64,10 @@
             <h2>Bulls and Cows</h2>
           </div>
           <div id="number-input">
-            <input id="digit1" name='digit' type="number" onkeyup="checkLen()">
-            <input id="digit2" name='digit' type="number" onkeyup="checkLen()">
-            <input id="digit3" name='digit' type="number" onkeyup="checkLen()">
-            <input id="digit4" name='digit' type="number" onkeyup="checkLen()">
+            <input id="digit1" name='digit' type="number" min="0" max="9" onkeyup="checkLen()">
+            <input id="digit2" name='digit' type="number" min="0" max="9" onkeyup="checkLen()">
+            <input id="digit3" name='digit' type="number" min="0" max="9" onkeyup="checkLen()">
+            <input id="digit4" name='digit' type="number" min="0" max="9" onkeyup="checkLen()">
             <button for='digit' type='button' onclick="startGame()">Go</button>
           </div>
           <div id="attempts">
