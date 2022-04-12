@@ -134,7 +134,7 @@ function changeYourNr(nr) {
   }
 }
 
-// Cows and Bulls Clue giving
+// Cows and Bulls generate number
 var gameNumber = 0;
 function generateNumber() {
   gameNumber = Math.floor(Math.random() * 10000);
@@ -147,6 +147,22 @@ function generateNumber() {
   else if (gameNumber < 10) {
     gameNumber = "000" + gameNumber.toString();
   }
-  console.log(gameNumber);
+}
+
+// Cows and Bulls Clue 
+function clues(gameNr, guess) {
+  let bulls = 0;
+  let cows = 0;
+  for (let i = 0; i < 4; i++) {
+    if (gameNr.includes(guess[i])) {
+      if (gameNr.includes(guess[i]), i) {
+        bulls++;
+      }
+      else {
+        cows++;
+      }
+    }
+  }
+  return [bulls, cows];
 }
 
