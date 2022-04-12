@@ -97,18 +97,17 @@ function resetUsername() {
   button.style.display = 'none';
   project1.style.display = 'block';
 }
-
 // Bulls and Cows
 
 function startGame() {
-  let initialNr = document.getElementById("digit1").value
-  + document.getElementById("digit2").value
-  + document.getElementById("digit3").value
-  + document.getElementById("digit4").value;
-  alert('thanks, your number is:  ' + initialNr);
-  return initialNr;
+  let initialNr = 0;
+     initialNr = document.getElementById("digit1").value
+    + document.getElementById("digit2").value
+    + document.getElementById("digit3").value
+    + document.getElementById("digit4").value;
+    // alert('thanks, your number is:  ' + initialNr);
+    changeYourNr(initialNr);
 }
-
 function checkLen() {
   let id = 'digit';
   for (let nr = 1; nr <=4; nr ++) {
@@ -120,8 +119,8 @@ function checkLen() {
 }
 
 // change id="your-nr1"
-
-function changeYourNr() {
-  document.getElementById('your-nr1').value = startGame();
-  
+// onbeforeprint="changeYourNr(document.getElementById(''))";
+function changeYourNr(nr) {
+  let numberField = document.getElementById("your-nr1");
+ numberField.innerHTML = nr;
 }
