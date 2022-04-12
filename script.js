@@ -120,7 +120,11 @@ function checkLen() {
 
 // change id="your-nr1"
 // onbeforeprint="changeYourNr(document.getElementById(''))";
+var round = 1;
 function changeYourNr(nr) {
-  let numberField = document.getElementById("your-nr1");
+  let numberField = document.getElementById("your-nr" + round);
  numberField.innerHTML = nr;
+ //document.getElementById(turn+nr).style.display = "inline";
+ round++;
+ // if > 6 gameover or win
 }

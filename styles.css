@@ -37,7 +37,7 @@ h1 {
 }
 header {
   border-bottom: 1px solid black;
-  background-image: url(../pic/flowers.png);
+  background-image: url(pic/flowers.png);
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -142,7 +142,7 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 50px; 
+  height: 50px;
 }
 #attempts {
   padding: 10px 0;
