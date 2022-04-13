@@ -96,10 +96,11 @@ function resetUsername() {
   button.style.display = 'none';
   project1.style.display = 'block';
 }
+// ________________________________________________________________________________________________
 
 //        B U L L S  A N D  C O W S         // 
 function startGame() {
-  generateNumber();
+  gameNumber = document.getElementById('hiddenNr').innerHTML;
   let initialNr = "";
   initialNr = getUsersNumber();
   if (initialNr == undefined) {
@@ -127,6 +128,8 @@ function generateNumber() {
     gameNumber = "000" + gameNumber.toString();
   }
   gameNumber = gameNumber.toString();
+  document.getElementById('hiddenNr').innerHTML = gameNumber;
+  document.getElementById('playGame').innerHTML = 'Reset Game';
 }
 
 function getUsersNumber() {

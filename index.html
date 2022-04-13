@@ -58,10 +58,11 @@
         </div>
         <button for='reset' type='button' id="reset-username" onclick="resetUsername()">Reset Username</button>
       </div>
-      <div id="project2">
+      <section id="project2">
         <div id="cb-game">
           <div>
             <h2>Bulls and Cows</h2>
+            <button type='button' id="playGame" onclick="generateNumber()">Start Game</button>
           </div>
           <div id="number-input">
             <input id="digit1" name='digit' type="number" min="0" max="9" onkeyup="checkLen()">
@@ -108,9 +109,12 @@
               <div class="box1"><p><img src="pic/bull.png" alt="bull"  width="30" height="30" class="bulls">:</p><p id="bull6">0</p></div>
             </div>
           </div>
-          
+          <summary id="gameResult">
+            <p>Well done!</p>
+            <p>The number is:</p><p id="hiddenNr">0000</p>
+          </summary>
         </div>
-      </div>
+      </section>
       <div class="gallery">
         <div class="nr1">1
         </div>
