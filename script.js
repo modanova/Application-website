@@ -79,6 +79,7 @@ function greetUser(name) {
   var button = document.getElementById('reset-username');
   var project1 = document.getElementById('project1');
   user.innerHTML = name;
+  document.getElementById('userMessage').innerHTML = user.innerHTML;
   enterUsername.style.display = 'none'; 
   button.style.display = 'block';
   project1.style.display = 'flex';
@@ -137,6 +138,7 @@ function generateNumber() {
 }
 
 function restartGame() {
+  document.getElementById('youWin').style.display = 'none';
   for( let i = 1; i <= round; i++) {
     let turnSection = document.getElementById('turn' + i);
     turnSection.style.display = 'none';
@@ -209,7 +211,7 @@ function displayClues(bulls, cows) {
 
 function displayGameResult() {
   if (round > 6) {
-    document.getElementById('gameResults').style.display = 'block';
+    document.getElementById('youWin').style.display = 'block';
   }
 }
 
@@ -219,6 +221,8 @@ function displayGameResult() {
 + make input not shown on lines if input is empty
 - make input not accept duplicate numbers
 - make generated number not contain repeated numbers
+- Display You win or You lose at the end 
+  OR
 - create a variable that equals .turn 
     - so on every turn it creates a new .turn like element
     - adds it to the attempts div
