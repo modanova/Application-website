@@ -25,14 +25,13 @@
   <body>
     <h4 class="title">A little bit about me...</h4>
     <div class="initials">
-      <h1 > MD</h1>
     </div>
     <div class="description">
       <p>Working as a teacher for a few years has been a dream come true. But I would love to explore another passion of mine: <strong>DESIGN</strong>!</p>
       <p>In the past, I taught myself to use Photoshop and Gimp for image manipulation. I have studied some front-end and love to make things in general.  
         Problem solving is a great passion and I view webdesign as a combination of a few passions of mine.</p>
     </div>
-    <div class="divider-box"> .
+    <div class="divider-box"> 
     </div>
     <div id="projects">
       <h1>Let's begin</h1>
@@ -46,9 +45,11 @@
               <li>one uppercase letter</li>
               <li>two numbers</li>
             </div>
+            <form>
             <label for='string'>Username</label>
             <input id='string' name='string' onkeyup="getInput()"></input>
             <button for='string' type='button' onclick="checkUsername()" >Submit</button>
+          </form>
           </div>
           <div class="password-indicator">
             <div id="bar1" onclick="colorScheme()"></div>
@@ -110,8 +111,10 @@
             </div>
           </div>
           <summary id="gameResult">
-            <p>Well done!</p>
-            <p>The number is:</p><p id="hiddenNr">0000</p>
+            <dialog id="gameResults" open>
+              <p>Well done! The number is:</p>
+              <p id="hiddenNr">0000</p>
+            </dialog>
           </summary>
         </div>
       </section>

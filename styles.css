@@ -43,7 +43,7 @@ header {
 }
 .initials {
   text-align: center;
-  margin: -120px 0 -50px 0;
+  
   color: hotpink;
   text-shadow: 5px 5px #e4bfda8a;
   font-size: 50px;
@@ -53,17 +53,19 @@ header {
   
 }
 .divider-box {
+  height: 20px;
   color: gray;
   background-color: rgba(128, 128, 128, 0.116);
 }
 #projects > h1 {
   font-size: 3em;
+  margin: -10px 0;
 }
 #project1 {
-  width: 70%;
-  margin: 0 15%;
+  width: 80%;
+  margin: 0 10%;
   align-items: center;
-  border: 5px solid seagreen;
+  border: 5px solid rgb(0, 255, 98);
   padding: 10px 0;
 }
 #enter-username-title {
@@ -132,10 +134,13 @@ header {
 }
 #project2 {
   width: 80%;
-  margin: 0 10%;
+  margin: 20px 10%;
+  border: 5px solid rgb(255, 0, 106);
+}
+#number-input {
+  display: none;
 }
 #cb-game > * {
-  border: 2px solid black;
   font-size: 26px;
 }
 .turn {
@@ -155,6 +160,14 @@ header {
   width: 10%;
   display: flex;
 }
-#gameResult {
+#gameResults {
   display: none;
+}
+#hiddenNr {
+  text-align: center;
+  font-family: 'Babylonica', cursive;
+  color:rgb(255, 0, 106);
+  text-decoration: solid;
+  font-size: 36px;
+  
 }

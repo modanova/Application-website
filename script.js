@@ -69,9 +69,7 @@ function colorScheme(highlight, count) {
     bar.style.backgroundColor = color;
   }
 }
-
-//Enter Username JS
-
+// _____________________________________________
 // Greeting
 
 
@@ -111,7 +109,8 @@ function startGame() {
  cowsAndBulls = clues(gameNumber, initialNr);
   bulls = cowsAndBulls[0];
   cows = cowsAndBulls[1];
-  displayClues(bulls, cows); 
+  displayClues(bulls, cows);
+  displayGameResult();
 }
 
 // Cows and Bulls generate number
@@ -130,6 +129,19 @@ function generateNumber() {
   gameNumber = gameNumber.toString();
   document.getElementById('hiddenNr').innerHTML = gameNumber;
   document.getElementById('playGame').innerHTML = 'Reset Game';
+  document.getElementById('number-input').style.display = "block";
+  if (round > 1) {
+    restartGame();
+    document.getElementById('gameResults').style.display = 'none';
+  }
+}
+
+function restartGame() {
+  for( let i = 1; i <= round; i++) {
+    let turnSection = document.getElementById('turn' + i);
+    turnSection.style.display = 'none';
+  }
+  round = 1;
 }
 
 function getUsersNumber() {
@@ -157,14 +169,12 @@ function checkLen() {
   }
 }
 
-// change id="your-nr1"
-// onbeforeprint="changeYourNr(document.getElementById(''))";
 var round = 1;
 function changeYourNr(nr) {
   if (round <= 6) {
-  let numberField = document.getElementById("your-nr" + round);
- numberField.innerHTML = nr;
- document.getElementById("turn"+round).style.display = "flex";
+    let numberField = document.getElementById("your-nr" + round);
+    numberField.innerHTML = nr;
+    document.getElementById("turn"+round).style.display = "flex";
   }
   else {
     // if > 6 gameover or win
@@ -197,9 +207,15 @@ function displayClues(bulls, cows) {
   round++;
 }
 
+function displayGameResult() {
+  if (round > 6) {
+    document.getElementById('gameResults').style.display = 'block';
+  }
+}
+
 /* To Do 
 + (Change cows and bulls in the html)
-- currently the GO button generates a new number every time it's clicked - make a button to start game and then add a function game play which takes a paramether the generated number and compares it 
++ currently the GO button generates a new number every time it's clicked - make a button to start game and then add a function game play which takes a paramether the generated number and compares it 
 + make input not shown on lines if input is empty
 - make input not accept duplicate numbers
 - make generated number not contain repeated numbers
@@ -209,4 +225,6 @@ function displayClues(bulls, cows) {
     - styles it the same way
 - for phones - add a digit dialpad *if I have time
 - style website
+- SEMANTIC HTML e.g. nav for navigation links, add links etc.
+- add prompts and progress showing
 */
