@@ -1,7 +1,6 @@
 //Enter Username JS
 function getInput() {
   var username = document.getElementById("string").value;
-  console.log(username);
   let x = 0;
   if (checkLength(username)) {
     x++;
@@ -13,7 +12,7 @@ function getInput() {
     x++;
   }
   colorScheme(false, 3);
-  colorScheme(true, x);
+  colorScheme(true, x); 
 }
 
 function checkUsername() {
@@ -97,18 +96,24 @@ function resetUsername() {
   button.style.display = 'none';
   project1.style.display = 'block';
 }
-// Bulls and Cows
 
+// Bulls and Cows
 function startGame() {
   generateNumber();
-  let initialNr = 0;
-     initialNr = document.getElementById("digit1").value[0]
-    + document.getElementById("digit2").value[0]
-    + document.getElementById("digit3").value[0]
-    + document.getElementById("digit4").value[0];
-    // alert('thanks, your number is:  ' + initialNr);
-    changeYourNr(initialNr);
+  let initialNr = "";
+  // if any of those is unidentified = alert('Please enter a valid number')
+  initialNr = document.getElementById("digit1").value[0]
+  + document.getElementById("digit2").value[0]
+  + document.getElementById("digit3").value[0]
+  + document.getElementById("digit4").value[0];
+  changeYourNr(initialNr);
+  let cowsAndBulls = [];
+ cowsAndBulls = clues(gameNumber, initialNr);
+  bulls = cowsAndBulls[0];
+  cows = cowsAndBulls[1];
+  
 }
+
 function checkLen() {
   let id = 'digit';
   for (let nr = 1; nr <= 4; nr++) {
@@ -147,6 +152,7 @@ function generateNumber() {
   else if (gameNumber < 10) {
     gameNumber = "000" + gameNumber.toString();
   }
+  gameNumber = gameNumber.toString();
 }
 
 // Cows and Bulls Clue 
@@ -166,3 +172,16 @@ function clues(gameNr, guess) {
   return [bulls, cows];
 }
 
+/* To Do 
+- Change cows and bulls in the html
+- currently the GO button generates a new number every time it's pressed - make a button to start game and then add a function game play which takes a paramether the generated number and compares it 
+- make input not shown on lines if input is empty
+- make input not accept duplicate numbers
+- make generated number not contain repeated numbers
+- create a variable that equals .turn 
+    - so on every turn it creates a new .turn like element
+    - adds it to the attempts div
+    - styles it the same way
+- for phones - add a digit dialpad *if I have time
+- style website
+*/
