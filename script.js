@@ -97,21 +97,51 @@ function resetUsername() {
   project1.style.display = 'block';
 }
 
-// Bulls and Cows
+//        B U L L S  A N D  C O W S         // 
 function startGame() {
   generateNumber();
   let initialNr = "";
-  // if any of those is unidentified = alert('Please enter a valid number')
-  initialNr = document.getElementById("digit1").value[0]
-  + document.getElementById("digit2").value[0]
-  + document.getElementById("digit3").value[0]
-  + document.getElementById("digit4").value[0];
+  initialNr = getUsersNumber();
+  if (initialNr == undefined) {
+    return;
+  }
   changeYourNr(initialNr);
   let cowsAndBulls = [];
  cowsAndBulls = clues(gameNumber, initialNr);
   bulls = cowsAndBulls[0];
   cows = cowsAndBulls[1];
-  
+  displayClues(bulls, cows); 
+}
+
+// Cows and Bulls generate number
+var gameNumber = 0;
+function generateNumber() {
+  gameNumber = Math.floor(Math.random() * 10000);
+  if (gameNumber < 1000 && gameNumber > 99) {
+    gameNumber = "0" + gameNumber.toString();
+  }
+  else if (gameNumber < 100 && gameNumber > 9) {
+    gameNumber = "00" + gameNumber.toString();
+  }
+  else if (gameNumber < 10) {
+    gameNumber = "000" + gameNumber.toString();
+  }
+  gameNumber = gameNumber.toString();
+}
+
+function getUsersNumber() {
+  let userNr = "";
+  userNr = document.getElementById("digit1").value[0]
+  + document.getElementById("digit2").value[0]
+  + document.getElementById("digit3").value[0]
+  + document.getElementById("digit4").value[0];
+  userNr = userNr.toString();
+  if (userNr.includes('undefined')) {
+    alert('Please enter a valid number');
+  } 
+  else {
+    return userNr;  
+  }
 }
 
 function checkLen() {
@@ -132,27 +162,10 @@ function changeYourNr(nr) {
   let numberField = document.getElementById("your-nr" + round);
  numberField.innerHTML = nr;
  document.getElementById("turn"+round).style.display = "flex";
- round++;
   }
   else {
     // if > 6 gameover or win
   }
-}
-
-// Cows and Bulls generate number
-var gameNumber = 0;
-function generateNumber() {
-  gameNumber = Math.floor(Math.random() * 10000);
-  if (gameNumber < 1000 && gameNumber > 99) {
-    gameNumber = "0" + gameNumber.toString();
-  }
-  else if (gameNumber < 100 && gameNumber > 9) {
-    gameNumber = "00" + gameNumber.toString();
-  }
-  else if (gameNumber < 10) {
-    gameNumber = "000" + gameNumber.toString();
-  }
-  gameNumber = gameNumber.toString();
 }
 
 // Cows and Bulls Clue 
@@ -172,10 +185,19 @@ function clues(gameNr, guess) {
   return [bulls, cows];
 }
 
+function displayClues(bulls, cows) {
+  
+  let bullClue = document.getElementById("bull" + round);
+  bullClue.innerHTML = bulls;
+  let cowClue = document.getElementById("cow" + round);
+  cowClue.innerHTML = cows;
+  round++;
+}
+
 /* To Do 
-- Change cows and bulls in the html
-- currently the GO button generates a new number every time it's pressed - make a button to start game and then add a function game play which takes a paramether the generated number and compares it 
-- make input not shown on lines if input is empty
++ (Change cows and bulls in the html)
+- currently the GO button generates a new number every time it's clicked - make a button to start game and then add a function game play which takes a paramether the generated number and compares it 
++ make input not shown on lines if input is empty
 - make input not accept duplicate numbers
 - make generated number not contain repeated numbers
 - create a variable that equals .turn 
