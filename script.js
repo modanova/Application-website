@@ -107,7 +107,7 @@ function startGame() {
   }
   changeYourNr(initialNr);
   let cowsAndBulls = [];
- cowsAndBulls = clues(gameNumber, initialNr);
+  cowsAndBulls = clues(gameNumber, initialNr);
   bulls = cowsAndBulls[0];
   cows = cowsAndBulls[1];
   displayClues(bulls, cows);
@@ -117,7 +117,15 @@ function startGame() {
 // Cows and Bulls generate number
 var gameNumber = 0;
 function generateNumber() {
-  gameNumber = Math.floor(Math.random() * 10000);
+  let digit = 0;
+  function() {
+    for (let index = 1; index <= 4; index++) {
+      digit(index) = Math.floor(Math.random() * 10);
+    }
+  }
+
+
+  gameNumber = ;
   if (gameNumber < 1000 && gameNumber > 99) {
     gameNumber = "0" + gameNumber.toString();
   }
@@ -133,17 +141,18 @@ function generateNumber() {
   document.getElementById('number-input').style.display = "block";
   if (round > 1) {
     restartGame();
-    document.getElementById('gameResults').style.display = 'none';
+    document.getElementById('gameResult').style.display = 'none';
   }
 }
 
 function restartGame() {
   document.getElementById('youWin').style.display = 'none';
-  for( let i = 1; i <= round; i++) {
+  for( let i = 1; i < round; i++) {
     let turnSection = document.getElementById('turn' + i);
     turnSection.style.display = 'none';
   }
   round = 1;
+
 }
 
 function getUsersNumber() {
@@ -153,7 +162,7 @@ function getUsersNumber() {
   + document.getElementById("digit3").value[0]
   + document.getElementById("digit4").value[0];
   userNr = userNr.toString();
-  if (userNr.includes('undefined')) {
+  if (userNr.includes('undefined') || userNr == 'NaN') {
     alert('Please enter a valid number');
   } 
   else {
@@ -187,6 +196,8 @@ function changeYourNr(nr) {
 function clues(gameNr, guess) {
   let bulls = 0;
   let cows = 0;
+  gameNr = gameNr.toString();
+  guess = guess.toString();
   for (let i = 0; i < 4; i++) {
     if (gameNr.includes(guess[i])) {
       if (gameNr.includes(guess[i]), i) {
@@ -216,6 +227,9 @@ function displayGameResult() {
 }
 
 /* To Do 
+- COW AND BULL CLUES NOT WORKING PROPERLY!!!
+
+- switch to next input box automatically
 + (Change cows and bulls in the html)
 + currently the GO button generates a new number every time it's clicked - make a button to start game and then add a function game play which takes a paramether the generated number and compares it 
 + make input not shown on lines if input is empty
