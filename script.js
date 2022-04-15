@@ -115,27 +115,10 @@ function startGame() {
 }
 
 // Cows and Bulls generate number
-var gameNumber = 0;
 function generateNumber() {
-  let digit = 0;
-  function() {
-    for (let index = 1; index <= 4; index++) {
-      digit(index) = Math.floor(Math.random() * 10);
-    }
-  }
-
-
-  gameNumber = ;
-  if (gameNumber < 1000 && gameNumber > 99) {
-    gameNumber = "0" + gameNumber.toString();
-  }
-  else if (gameNumber < 100 && gameNumber > 9) {
-    gameNumber = "00" + gameNumber.toString();
-  }
-  else if (gameNumber < 10) {
-    gameNumber = "000" + gameNumber.toString();
-  }
-  gameNumber = gameNumber.toString();
+  let gameNumber = '';
+  gameNumber = noDuplicates();
+  gameNumber = gameNumber.join("");
   document.getElementById('hiddenNr').innerHTML = gameNumber;
   document.getElementById('playGame').innerHTML = 'Reset Game';
   document.getElementById('number-input').style.display = "block";
@@ -143,6 +126,18 @@ function generateNumber() {
     restartGame();
     document.getElementById('gameResult').style.display = 'none';
   }
+}
+
+function noDuplicates() {
+  let gameNumber = [];
+  let gameRange = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+  let gameRangeIndex = -1;
+  for (let index = 1; index <= 4; index++) {
+    gameRangeIndex = Math.floor(Math.random() * gameRange.length);
+    gameNumber.push(gameRange[gameRangeIndex]);
+    gameRange.splice(gameRangeIndex, 1);
+  }
+  return gameNumber;
 }
 
 function restartGame() {
