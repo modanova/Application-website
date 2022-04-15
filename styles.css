@@ -121,24 +121,6 @@ button {
   display: none;
   justify-self: center;
 }
-.gallery {
-  width: 92%;
-  margin: 2%;
-  padding: 2%;
-  display: flex;
-  flex-wrap: wrap;
-  border: 2px solid pink;
-  border-radius: 1%;
-  justify-content: space-around;
-}
-.gallery > div{
-  height: auto;
-  width: 30%;
-  text-align: center;
-  text-justify: center;
-  border: 2px solid pink;
-  border-radius: 5%;
-}
 #project2 {
   width: 80%;
   margin: 20px 10%;
