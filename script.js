@@ -105,7 +105,7 @@ function startGame() {
   if (initialNr == undefined) {
     return;
   }
-  changeYourNr(initialNr);
+  changeYourNr(initialNr.join(""));
   let cowsAndBulls = [];
   cowsAndBulls = clues(gameNumber, initialNr);
   bulls = cowsAndBulls[0];
@@ -118,8 +118,7 @@ function startGame() {
 function generateNumber() {
   let gameNumber = '';
   gameNumber = noDuplicates();
-  gameNumber = gameNumber.join("");
-  document.getElementById('hiddenNr').innerHTML = gameNumber;
+  document.getElementById('hiddenNr').innerHTML = gameNumber.join("");
   document.getElementById('playGame').innerHTML = 'Reset Game';
   document.getElementById('number-input').style.display = "block";
   if (round > 1) {
@@ -130,7 +129,7 @@ function generateNumber() {
 
 function noDuplicates() {
   let gameNumber = [];
-  let gameRange = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+  let gameRange = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   let gameRangeIndex = -1;
   for (let index = 1; index <= 4; index++) {
     gameRangeIndex = Math.floor(Math.random() * gameRange.length);
@@ -151,12 +150,12 @@ function restartGame() {
 }
 
 function getUsersNumber() {
-  let userNr = "";
-  userNr = document.getElementById("digit1").value[0]
-  + document.getElementById("digit2").value[0]
-  + document.getElementById("digit3").value[0]
-  + document.getElementById("digit4").value[0];
-  userNr = userNr.toString();
+  let userNr = [];
+  let urDigit = 0;
+  for (let i = 1; i <= 4; i++) {
+    urDigit = document.getElementById("digit" + i).value[0];
+    userNr.push(urDigit);
+  }
   if (userNr.includes('undefined') || userNr == 'NaN') {
     alert('Please enter a valid number');
   } 
@@ -182,27 +181,24 @@ function changeYourNr(nr) {
     numberField.innerHTML = nr;
     document.getElementById("turn"+round).style.display = "flex";
   }
-  else {
-    // if > 6 gameover or win
-  }
+  // else {
+  //  if > 6 gameover or win
+  // }
 }
 
 // Cows and Bulls Clue 
-function clues(gameNr, guess) {
+function clues(guess, gameNr) {
   let bulls = 0;
   let cows = 0;
-  gameNr = gameNr.toString();
-  guess = guess.toString();
   for (let i = 0; i < 4; i++) {
-    if (gameNr.includes(guess[i])) {
-      if (gameNr.includes(guess[i]), i) {
+    if (guess[i] == gameNr[i]) {
         bulls++;
       }
-      else {
-        cows++;
-      }
+    if (gameNr.includes(guess[i])) {
+      cows++;
     }
-  }
+    }
+    cows = cows - bulls;
   return [bulls, cows];
 }
 
@@ -223,8 +219,7 @@ function displayGameResult() {
 
 /* To Do 
 - COW AND BULL CLUES NOT WORKING PROPERLY!!!
-
-- switch to next input box automatically
+- to focus next input field on keypress / switch to next input box automatically
 + (Change cows and bulls in the html)
 + currently the GO button generates a new number every time it's clicked - make a button to start game and then add a function game play which takes a paramether the generated number and compares it 
 + make input not shown on lines if input is empty
