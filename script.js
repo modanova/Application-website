@@ -153,10 +153,11 @@ function getUsersNumber() {
   let userNr = [];
   let urDigit = 0;
   for (let i = 1; i <= 4; i++) {
-    urDigit = document.getElementById("digit" + i).value[0];
+    urDigit = document.getElementById("digit" + i).value;
     userNr.push(urDigit);
+    urDigit = document.getElementById("digit" + i).value = '';
   }
-  if (userNr.includes(undefined)) {
+  if (userNr.includes(undefined) || userNr.join("").length > 4) {
     alert('Please enter a valid number');
   } 
   else {
