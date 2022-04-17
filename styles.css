@@ -155,10 +155,10 @@ button {
   width: 10%;
   display: flex;
 }
-#gameWin, #gameLose {
+#gameResult {
   display: none;
 }
-#hiddenNr1, #hiddenNr2 {
+#hiddenNr {
   text-align: center;
   font-family: 'IBM Plex Serif', serif;
   font-weight: 900;

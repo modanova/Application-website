@@ -99,7 +99,7 @@ function resetUsername() {
 
 //        B U L L S  A N D  C O W S         // 
 function startGame() {
-  gameNumber = document.getElementById('hiddenNr1').innerHTML;
+  gameNumber = document.getElementById('hiddenNr').innerHTML;
   let initialNr = "";
   initialNr = getUsersNumber();
   if (initialNr == undefined) {
@@ -118,13 +118,12 @@ function startGame() {
 function generateNumber() {
   let gameNumber = '';
   gameNumber = noDuplicates();
-  document.getElementById('hiddenNr1').innerHTML = gameNumber.join("");
-  document.getElementById('hiddenNr2').innerHTML = gameNumber.join("");  
+  document.getElementById('hiddenNr').innerHTML = gameNumber.join("");
   document.getElementById('playGame').innerHTML = 'Reset Game';
   document.getElementById('number-input').style.display = "block";
   if (round > 1) {
     restartGame();
-    document.getElementById('gameWin').style.display = 'none';
+    document.getElementById('gameResult').style.display = 'none';
   }
 }
 
@@ -141,7 +140,7 @@ function noDuplicates() {
 }
 
 function restartGame() {
-  document.getElementById('gameWin').style.display = 'none';
+  document.getElementById('gameResult').style.display = 'none';
   for( let i = 1; i < round; i++) {
     let turnSection = document.getElementById('turn' + i);
     turnSection.style.display = 'none';
@@ -157,7 +156,8 @@ function getUsersNumber() {
     userNr.push(urDigit);
     urDigit = document.getElementById("digit" + i).value = '';
   }
-  if (userNr.includes(undefined) || userNr.join("").length > 4) {
+  document.getElementById("digit1").focus();
+  if (userNr.includes('') || userNr.join("").length > 4) {
     alert('Please enter a valid number');
   } 
   else {
@@ -166,6 +166,9 @@ function getUsersNumber() {
 }
 
 function nextInput(element) {
+  if (element.value.length > 1 ) {
+    element.value = element.value[element.value.length-1];
+  }
   if (element.value.length >= 1 && element.nextElementSibling) {
     element.nextElementSibling.focus();
   }
@@ -213,7 +216,7 @@ function displayClues(bulls, cows) {
 
 function displayGameResult() {
   if (round > 10) {
-    document.getElementById('gameWin').style.display = 'block';
+    document.getElementById('gameResult').style.display = 'block';
   }
 }
 
