@@ -156,7 +156,9 @@ button {
   display: flex;
 }
 #gameResult {
-  display: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 #hiddenNr {
   text-align: center;
@@ -169,8 +171,8 @@ button {
   border-radius: 15px;
 }
 
-
 .heartbeat {
+  width: 100%;
 	animation: heartbeat 1.5s ease-in-out 3 both;
 	animation: heartbeat 1.5s ease-in-out 3 both;
 }

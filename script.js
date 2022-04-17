@@ -79,7 +79,7 @@ function greetUser(name) {
   var button = document.getElementById('reset-username');
   var project1 = document.getElementById('project1');
   user.innerHTML = name;
-  document.getElementById('userMessage').innerHTML = user.innerHTML;
+  document.getElementById('yourName').innerHTML = user.innerHTML;
   enterUsername.style.display = 'none'; 
   button.style.display = 'block';
   project1.style.display = 'flex';
@@ -119,7 +119,7 @@ function generateNumber() {
   let gameNumber = '';
   gameNumber = noDuplicates();
   document.getElementById('hiddenNr').innerHTML = gameNumber.join("");
-  document.getElementById('playGame').innerHTML = 'Reset Game';
+  document.getElementById('playGame').innerHTML = 'Restart Game';
   document.getElementById('number-input').style.display = "block";
   if (round > 1) {
     restartGame();
@@ -215,7 +215,17 @@ function displayClues(bulls, cows) {
 }
 
 function displayGameResult() {
+  let user = document.getElementById("user").innerHTML;
+  let yourName = document.getElementById("yourName").innerHTML;
+  yourName = user;
+  let bullClue = parseInt(document.getElementById("bull" + (round-1)).innerHTML);
+  if (bullClue == 4) {
+    let yourGame = document.getElementById("yourGame");
+    yourGame.innerHTML = 'Hooray, ';
+    document.getElementById('gameResult').style.display = 'flex';
+  }
   if (round > 10) {
+    yourGame.innerHTML = 'Good try, ';
     document.getElementById('gameResult').style.display = 'block';
   }
 }
