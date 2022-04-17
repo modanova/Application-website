@@ -156,7 +156,7 @@ button {
   display: flex;
 }
 #gameResult {
-  display: flex;
+  display: none;
   justify-content: center;
   flex-wrap: wrap;
 }
