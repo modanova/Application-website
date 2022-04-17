@@ -99,7 +99,7 @@ function resetUsername() {
 
 //        B U L L S  A N D  C O W S         // 
 function startGame() {
-  gameNumber = document.getElementById('hiddenNr').innerHTML;
+  gameNumber = document.getElementById('hiddenNr1').innerHTML;
   let initialNr = "";
   initialNr = getUsersNumber();
   if (initialNr == undefined) {
@@ -118,12 +118,13 @@ function startGame() {
 function generateNumber() {
   let gameNumber = '';
   gameNumber = noDuplicates();
-  document.getElementById('hiddenNr').innerHTML = gameNumber.join("");
+  document.getElementById('hiddenNr1').innerHTML = gameNumber.join("");
+  document.getElementById('hiddenNr2').innerHTML = gameNumber.join("");  
   document.getElementById('playGame').innerHTML = 'Reset Game';
   document.getElementById('number-input').style.display = "block";
   if (round > 1) {
     restartGame();
-    document.getElementById('gameResult').style.display = 'none';
+    document.getElementById('gameWin').style.display = 'none';
   }
 }
 
@@ -140,7 +141,7 @@ function noDuplicates() {
 }
 
 function restartGame() {
-  document.getElementById('youWin').style.display = 'none';
+  document.getElementById('gameWin').style.display = 'none';
   for( let i = 1; i < round; i++) {
     let turnSection = document.getElementById('turn' + i);
     turnSection.style.display = 'none';
@@ -181,6 +182,9 @@ function changeYourNr(nr) {
     numberField.innerHTML = nr;
     document.getElementById("turn"+round).style.display = "flex";
   }
+  else {
+    return;
+  }
   // else {
   //  if > 6 gameover or win
   // }
@@ -213,7 +217,7 @@ function displayClues(bulls, cows) {
 
 function displayGameResult() {
   if (round > 10) {
-    document.getElementById('youWin').style.display = 'block';
+    document.getElementById('gameWin').style.display = 'block';
   }
 }
 

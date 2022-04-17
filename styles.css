@@ -155,23 +155,24 @@ button {
   width: 10%;
   display: flex;
 }
-#youWin, #youLose {
+#gameWin, #gameLose {
   display: none;
 }
-#hiddenNr {
+#hiddenNr1, #hiddenNr2 {
   text-align: center;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'IBM Plex Serif', serif;
+  font-weight: 900;
   color:rgb(255, 0, 106);
-  text-decoration: solid;
-  font-size: 66px;
+  font-size: 56px;
   margin: -10px;
   background-color: rgba(255, 230, 0, 0.185);
+  border-radius: 15px;
 }
 
 
 .heartbeat {
-	-webkit-animation: heartbeat 1.5s ease-in-out 3 both;
-	        animation: heartbeat 1.5s ease-in-out 3 both;
+	animation: heartbeat 1.5s ease-in-out 3 both;
+	animation: heartbeat 1.5s ease-in-out 3 both;
 }
 
 /* ----------------------------------------------
