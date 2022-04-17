@@ -176,7 +176,7 @@ function checkLen() {
 
 var round = 1;
 function changeYourNr(nr) {
-  if (round <= 6) {
+  if (round <= 10) {
     let numberField = document.getElementById("your-nr" + round);
     numberField.innerHTML = nr;
     document.getElementById("turn"+round).style.display = "flex";
@@ -212,27 +212,22 @@ function displayClues(bulls, cows) {
 }
 
 function displayGameResult() {
-  if (round > 6) {
+  if (round > 10) {
     document.getElementById('youWin').style.display = 'block';
   }
 }
 
 /* To Do 
-- COW AND BULL CLUES NOT WORKING PROPERLY!!!
+- to have 10 rounds
 - to focus next input field on keypress / switch to next input box automatically
-+ (Change cows and bulls in the html)
-+ currently the GO button generates a new number every time it's clicked - make a button to start game and then add a function game play which takes a paramether the generated number and compares it 
-+ make input not shown on lines if input is empty
-- make input not accept duplicate numbers
-- make generated number not contain repeated numbers
+- SEMANTIC HTML e.g. nav for navigation links, add links etc.
 - Display You win or You lose at the end 
-  OR
-- create a variable that equals .turn 
-    - so on every turn it creates a new .turn like element
-    - adds it to the attempts div
-    - styles it the same way
 - for phones - add a digit dialpad *if I have time
 - style website
-- SEMANTIC HTML e.g. nav for navigation links, add links etc.
 - add prompts and progress showing
++ COW AND BULL CLUES NOT WORKING PROPERLY!!!
++ Change cows and bulls in the html
++ make input not shown on lines if input is empty
+-- make input not accept duplicate numbers --> actually it can stay, it's useful
++ make generated number not contain repeated numbers
 */
