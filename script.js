@@ -147,7 +147,6 @@ function restartGame() {
     turnSection.style.display = 'none';
   }
   round = 1;
-
 }
 
 function getUsersNumber() {
@@ -165,13 +164,9 @@ function getUsersNumber() {
   }
 }
 
-function checkLen() {
-  let id = 'digit';
-  for (let nr = 1; nr <= 4; nr++) {
-    var el = document.getElementById(id+nr).value;
-  if (el.length > 1) {
-    document.getElementById(id+nr).value = el.slice(el.length - 1);  
-  }
+function nextInput(element) {
+  if (element.value.length >= 1 && element.nextElementSibling) {
+    element.nextElementSibling.focus();  
   }
 }
 
@@ -222,7 +217,7 @@ function displayGameResult() {
 }
 
 /* To Do 
-- to have 10 rounds
++ to have 10 rounds
 - to focus next input field on keypress / switch to next input box automatically
 - SEMANTIC HTML e.g. nav for navigation links, add links etc.
 - Display You win or You lose at the end 
