@@ -156,7 +156,7 @@ function getUsersNumber() {
     urDigit = document.getElementById("digit" + i).value[0];
     userNr.push(urDigit);
   }
-  if (userNr.includes('undefined') || userNr == 'NaN') {
+  if (userNr.includes(undefined)) {
     alert('Please enter a valid number');
   } 
   else {
@@ -166,7 +166,7 @@ function getUsersNumber() {
 
 function nextInput(element) {
   if (element.value.length >= 1 && element.nextElementSibling) {
-    element.nextElementSibling.focus();  
+    element.nextElementSibling.focus();
   }
 }
 
@@ -218,9 +218,9 @@ function displayGameResult() {
 
 /* To Do 
 + to have 10 rounds
-- to focus next input field on keypress / switch to next input box automatically
-- SEMANTIC HTML e.g. nav for navigation links, add links etc.
++ to focus next input field on keypress / switch to next input box automatically
 - Display You win or You lose at the end 
+- SEMANTIC HTML e.g. nav for navigation links, add links etc.
 - for phones - add a digit dialpad *if I have time
 - style website
 - add prompts and progress showing
