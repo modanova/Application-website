@@ -18,17 +18,29 @@ header, body > * {
   align-items: baseline;
   margin: -5px 0;
 }
-#nav-bar > div > a  {
-  font-size: 20px;
+.nav-link {
+  padding: 10px;
+  text-align: center;
+  font-family: 'Babylonica', cursive;
+  font-size: 52px;
+  padding: 12px;
   text-decoration: none;
   color: white;
 }
+#nav-bar a:hover {
+  color: greenyellow;
+  text-decoration: underline;
+}
+header {
+  border-bottom: 1px solid black;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
 
 .dropbtn {
-  background-color: green;
-  color: black;
+  font-family: 'Babylonica', cursive;
+  font-size: 32px;
   padding: 16px;
-  font-size: 16px;
   border: none;
   border-radius: 5%;
 }
@@ -41,15 +53,17 @@ header, body > * {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  color: #f1f1f1;
   min-width: 50px;
   box-shadow: 0px 8px 16px 0px greenyellow;
   z-index: 1;
 }
 
 .dropdown-content a {
-  color: black;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: white;
   padding: 12px;
+  font-size: 18px;
   text-decoration: none;
   display: block;
 }
@@ -69,24 +83,8 @@ h1 {
   flex: 4;
   font-family: 'Babylonica', cursive;
 }
-#nav-bar div {
-  padding: 5px;
-  text-align: center;
-}
-#nav-bar div:hover {
-  color: greenyellow;
-}
-header {
-  border-bottom: 1px solid black;
-  background-repeat: no-repeat;
-  background-size: 100%;
-}
-.initials {
-  text-align: center;
-  
-  color: hotpink;
-  text-shadow: 5px 5px #e4bfda8a;
-  font-size: 50px;
+#about-me {
+  display: none;
 }
 .description {
   border-bottom: 1px solid black;
@@ -104,6 +102,7 @@ header {
   box-shadow: 2px 2px grey;
 }
 #project1 {
+  display: none;
   width: 80%;
   margin: 0 10%;
   align-items: center;
@@ -157,6 +156,7 @@ header {
   justify-self: center;
 }
 #project2 {
+  display: none;
   width: 80%;
   margin: 20px 10%;
   border: 5px solid rgb(255, 0, 106);

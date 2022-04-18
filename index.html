@@ -12,30 +12,25 @@
   <header>
     <div id="nav-bar">
       <h1>modanova</h1>
-      <div><a>home</a>
-      </div>
-      <div ><a>About me</a>
-      </div>
-      <div>
-        <a href="https://github.com/modanova">Git hub</a>
-      </div>
+      <div><a class='nav-link' onclick="document.getElementById('about-me').style.display='block'">About me</a></div>
+        <div><a class='nav-link' href="https://github.com/modanova">Git hub</a></div>
       <div class="dropdown">
-        <button class="dropbtn">Prompts</button>
+        <button class='nav-link' class="dropbtn">Prompts</button>
         <div class="dropdown-content">
-          <a href="https://modanova.github.io/tribute-page/">tribute page</a>
+          <a href="https://modanova.github.io/tribute-page/">Tribute page</a>
           <a href="replit.html">Functions</a>
-          <a href="#string">DOM</a>
           <a href="https://modanova.github.io/first/">Array Methods</a>
           <a href="#">Flexbox</a>
           <a href="#">Objects</a>
-          <a href="#project2">Feature</a>
+          <a href="#string" onclick="document.getElementById('project1').style.display='block'">DOM: Username</a>
+          <a href="#project2" onclick="document.getElementById('project2').style.display='block'">Feature: Bulls&Cows game</a>
         </div>
       </div>
       </div>
     </div>
   </header>
   <body>
-    <section>
+    <section id="about-me">
     <h4 class="title">A little bit about me...</h4>
     <div class="description">
       <p>Working as a teacher for a few years has been a dream come true. But I would love to explore another passion of mine: <strong>DESIGN</strong>!</p>
@@ -44,7 +39,6 @@
     </div>
   </section>
     <div id="projects">
-      <h1>Let's begin</h1>
       <div id="project1">
         <div id="enter-username-title"><p>Hello, <name id="user">User</name>!</p></div>
         <div id="enter-username">
