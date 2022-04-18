@@ -205,10 +205,16 @@ h1 {
 }
 #cb-game > * {
   font-size: 26px;
+  text-align: center;
 }
 #cb-game h2 {
   width: 100%;
   text-align: center;
+}
+#cb-game > div > p {
+  font-size: 32px;
+  font-family: "Square Peg";
+  line-height: 90%;
 }
 .turn {
   display: flex;
