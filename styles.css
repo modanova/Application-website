@@ -1,14 +1,15 @@
 body {
-  background-color: black;
+  background-color: #242424;
   color: white;
   width: 80%;
   padding: 5px;
   margin: 0 10%;
   justify-items: center;
-  border: 2px solid greenyellow;
+  border: 2px solid #0099E5;
+  border-radius: 5px;
 }
 header, body > * {
-  background-color: black;
+  background-color: #242424;
   font-size: 20px;
 }
 #nav-bar {
@@ -18,6 +19,17 @@ header, body > * {
   align-items: baseline;
   margin: -5px 0;
 }
+a.nav-link:hover {
+  background-color: #3f3f3f;
+  box-shadow: 0px 2px #0099e5;;
+}
+@media (max-width: 1025px) {
+  #nav-bar a, .dropdown button {
+    font-family: 'Square Peg', cursive;
+    display: block;
+    font-size: 32px;
+  }
+}
 .nav-link {
   padding: 10px;
   text-align: center;
@@ -25,16 +37,17 @@ header, body > * {
   font-size: 52px;
   padding: 12px;
   text-decoration: none;
-  background-color: black;
+  background-color: #242424;
   color: white;
   border: none;
 }
-#nav-bar a:hover, button.nav-link {
-  color: greenyellow;
+#nav-bar a:hover, button.nav-link:hover {
+  color: #0099E5;
+  background-color: #3f3f3f;
   font-weight: bold;
 }
 header {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #242424;
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -44,7 +57,6 @@ header {
   font-size: 32px;
   padding: 16px;
   border: none;
-  border-radius: 5%;
 }
 
 .dropdown {
@@ -56,15 +68,15 @@ header {
   display: none;
   position: absolute;
   color: #f1f1f1;
-  min-width: 50px;
-  box-shadow: 0px 8px 16px 0px greenyellow;
+  min-width: 170px;
+  text-align: center;
+  box-shadow: 0px 8px 16px 0px #0099E5;
   z-index: 1;
 }
-
-.dropdown-content a {
+#dropdown-links a {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   color: white;
-  background-color: black;
+  background-color: #242424;
   padding: 12px;
   font-size: 18px;
   text-decoration: none;
@@ -72,7 +84,7 @@ header {
 }
 
 .dropdown-content a:hover {
-  background-color: greenyellow;
+  background-color: #0099E5;
 }
 
 .dropdown:hover .dropdown-content {
@@ -80,7 +92,7 @@ header {
 }
 
 .dropdown:hover .dropbtn {
-  background-color: greenyellow;
+  background-color: #0099E5;
 }
 h1 {
   flex: 2;
@@ -89,19 +101,18 @@ h1 {
 #about-me {
   display: none;
 }
-.description {
-  border-bottom: 1px solid black;
-  
-}
 #projects > h1 {
   font-size: 3em;
   margin: -10px 0;
 }
+#playGame {
+  width: 50%;
+  margin: 0 25%;
+}
 .gameButton {
-  height: auto;
+  height: 50px;
   width: 120px;
   font-size: 20px;
-  border-radius: 15px;
   box-shadow: 2px 2px grey;
 }
 #project1 {
@@ -109,7 +120,8 @@ h1 {
   width: 80%;
   margin: 0 10%;
   align-items: center;
-  border: 5px solid rgb(0, 255, 98);
+  border: 5px solid #0099E5;
+  border-radius: 5px;
   padding: 10px 0;
 }
 #enter-username-title {
@@ -147,7 +159,8 @@ h1 {
   align-items: center; 
 }
 .password-indicator > div {
-  border: 1px solid rgb(209, 209, 209);
+  border: 1px solid #0099E5;
+  border-radius: 2px;
   margin: 2px;
   height: 20px;
   width: 30%;
@@ -160,37 +173,63 @@ h1 {
 }
 #project2 {
   display: none;
+  justify-content: center;
   width: 80%;
   margin: 20px 10%;
-  border: 5px solid rgb(255, 0, 106);
+  border: 5px solid #0099E5;
+  border-radius: 5px;
 }
 #digit1, #digit2, #digit3, #digit4 {
-  height: 68px;
+  height: 64px;
   width: 50px;
   font-size: 39px;
   text-align: center;
 }
 #number-input {
   display: none;
+  justify-content: center;
+  align-items: center
+}
+#number-input input {
+  margin: 10px 2px;
+  background-color: #0099E5;
+  color: #242424;
+  border-radius: 10px;
+}
+.turn {
+  background-color: #0099E5;
+  color: #242424;
+  height: 30px;
+  border-radius: 20px;
+  border: 0.5px solid gray;
 }
 #cb-game > * {
   font-size: 26px;
 }
+#cb-game h2 {
+  width: 100%;
+  text-align: center;
+}
 .turn {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   height: 50px;
+  width: 60%;
+  margin: 0 20%;
   display: none;
 }
 #attempts {
   padding: 10px 0;
 }
+.box, .box1 {
+  margin: 0 10px;
+}
 .box {
   display: inline-flex;
 }
 .box1 {
-  width: 10%;
+  width: 20%;
   display: flex;
 }
 #gameResult {
@@ -202,10 +241,9 @@ h1 {
   text-align: center;
   font-family: 'IBM Plex Serif', serif;
   font-weight: 900;
-  color:rgb(255, 0, 106);
+  color:#0099E5;
   font-size: 56px;
   margin: -10px;
-  background-color: rgba(255, 230, 0, 0.185);
   border-radius: 15px;
 }
 
@@ -306,13 +344,13 @@ h1 {
 }
 
 #prompt-functions > code {
-  background-color: greenyellow;
+  background-color: #0099E5;
   display: block;
   text-align: center;
   width: auto;
   height:  auto; 
   padding: 25px 5px;
-  border: 2px solid black;
+  border: 2px solid #242424;
   border-radius: 10px;
 }
 

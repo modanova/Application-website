@@ -120,7 +120,7 @@ function generateNumber() {
   gameNumber = noDuplicates();
   document.getElementById('hiddenNr').innerHTML = gameNumber.join("");
   document.getElementById('playGame').innerHTML = 'Restart Game';
-  document.getElementById('number-input').style.display = "block";
+  document.getElementById('number-input').style.display = "flex";
   if (round > 1) {
     restartGame();
     document.getElementById('gameResult').style.display = 'none';
