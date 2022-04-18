@@ -5,7 +5,7 @@ body {
   padding: 5px;
   margin: 0 10%;
   justify-items: center;
-  border: 2px solid plum;
+  border: 2px solid greenyellow;
 }
 header, body > * {
   background-color: black;
@@ -25,11 +25,13 @@ header, body > * {
   font-size: 52px;
   padding: 12px;
   text-decoration: none;
+  background-color: black;
   color: white;
+  border: none;
 }
-#nav-bar a:hover {
+#nav-bar a:hover, button.nav-link {
   color: greenyellow;
-  text-decoration: underline;
+  font-weight: bold;
 }
 header {
   border-bottom: 1px solid black;
@@ -62,6 +64,7 @@ header {
 .dropdown-content a {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   color: white;
+  background-color: black;
   padding: 12px;
   font-size: 18px;
   text-decoration: none;
@@ -80,7 +83,7 @@ header {
   background-color: greenyellow;
 }
 h1 {
-  flex: 4;
+  flex: 2;
   font-family: 'Babylonica', cursive;
 }
 #about-me {
