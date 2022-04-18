@@ -222,20 +222,22 @@ function displayGameResult() {
   if (bullClue == 4) {
     let yourGame = document.getElementById("yourGame");
     yourGame.innerHTML = 'Hooray, ';
-    document.getElementById('gameResult').style.display = 'flex';
+    document.getElementById('gameResult').style.display = 'flex';    
+    document.getElementById("number-input").style.display = 'none';
   }
-  if (round > 10) {
+  if (round > 10 && bullClue != 4) {
     yourGame.innerHTML = 'Good try, ';
-    document.getElementById('gameResult').style.display = 'block';
+    document.getElementById('gameResult').style.display = 'flex';
+    document.getElementById("number-input").style.display = 'none';
   }
 }
 
 /* To Do 
 + to have 10 rounds
 + to focus next input field on keypress / switch to next input box automatically
-- Display You win or You lose at the end 
++ Display You win or You lose at the end 
 - SEMANTIC HTML e.g. nav for navigation links, add links etc.
-- for phones - add a digit dialpad *if I have time
+-- for phones - add a digit dialpad *if I have time
 - style website
 - add prompts and progress showing
 + COW AND BULL CLUES NOT WORKING PROPERLY!!!

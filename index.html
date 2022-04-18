@@ -12,26 +12,37 @@
   <header>
     <div id="nav-bar">
       <h1>modanova</h1>
-      <div ><p>home |</p>
+      <div><a>home</a>
       </div>
-      <div >
-        <p>git hub |</p>
+      <div ><a>About me</a>
       </div>
-      <div ><p>tribute page |</p>
+      <div>
+        <a href="https://github.com/modanova">Git hub</a>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Prompts</button>
+        <div class="dropdown-content">
+          <a href="https://modanova.github.io/tribute-page/">tribute page</a>
+          <a href="replit.html">Functions</a>
+          <a href="#string">DOM</a>
+          <a href="https://modanova.github.io/first/">Array Methods</a>
+          <a href="#">Flexbox</a>
+          <a href="#">Objects</a>
+          <a href="#project2">Feature</a>
+        </div>
+      </div>
       </div>
     </div>
   </header>
   <body>
+    <section>
     <h4 class="title">A little bit about me...</h4>
-    <div class="initials">
-    </div>
     <div class="description">
       <p>Working as a teacher for a few years has been a dream come true. But I would love to explore another passion of mine: <strong>DESIGN</strong>!</p>
       <p>In the past, I taught myself to use Photoshop and Gimp for image manipulation. I have studied some front-end and love to make things in general.  
         Problem solving is a great passion and I view webdesign as a combination of a few passions of mine.</p>
     </div>
-    <div class="divider-box"> 
-    </div>
+  </section>
     <div id="projects">
       <h1>Let's begin</h1>
       <div id="project1">
@@ -47,7 +58,7 @@
             <form>
             <label for='string'>Username</label>
             <input id='string' name='string' onkeyup="getInput()"></input>
-            <button for='string' type='button' onclick="checkUsername()" >Submit</button>
+            <button class='gameButton' for='string' type='button' onclick="checkUsername()" >Submit</button>
           </form>
           </div>
           <div class="password-indicator">
@@ -56,20 +67,20 @@
             <div id="bar3" onclick="colorScheme()"> </div>
           </div>
         </div>
-        <button for='reset' type='button' id="reset-username" onclick="resetUsername()">Reset Username</button>
+        <button class='gameButton' for='reset' type='button' id="reset-username" onclick="resetUsername()">Reset Username</button>
       </div>
       <section id="project2">
         <div id="cb-game">
           <div>
             <h2>Bulls and Cows</h2>
-            <button type='button' id="playGame" onclick="generateNumber()">Start Game</button>
+            <button class='gameButton' type='button' id="playGame" onclick="generateNumber()">Start Game</button>
           </div>
           <div id="number-input">
             <input id="digit1" name='digit' type="number" min="0" max="9" oninput="nextInput(this)">
             <input id="digit2" name='digit' type="number" min="0" max="9" onkeyup="nextInput(this)">
             <input id="digit3" name='digit' type="number" min="0" max="9" onkeyup="nextInput(this)">
             <input id="digit4" name='digit' type="number" min="0" max="9" onkeyup="nextInput(this)">
-            <button for='digit' type='button' onclick="startGame()">Go</button>
+            <button class='gameButton' for='digit' type='button' onclick="startGame()">Go</button>
           </div>
           <div id="attempts">
             <div class="turn" id="turn1">
