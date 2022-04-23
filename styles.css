@@ -30,6 +30,15 @@ a.nav-link:hover {
     font-size: 32px;
   }
 }
+@media (max-width: 906px) {
+  .turn {
+    margin: 0 5%;
+    color: blue;
+  }
+}
+@media (max-width: 518px) {
+  
+}
 .nav-link {
   padding: 10px;
   text-align: center;
@@ -130,9 +139,10 @@ h1 {
 }
 #enter-username {
   width: 100%;
+  font-family: "Square Peg";
 }
 #enter-username > * {
-  font-size: 20px;
+  font-size: 28px;
 }
 .usinput-container {
   display: flex;
@@ -147,7 +157,6 @@ h1 {
   width: 100%;
   display: flex;
   justify-content: space-around;
-  font-size: 18px;
   flex-wrap: wrap;
 }
 .password-indicator {
@@ -221,8 +230,8 @@ h1 {
   justify-content: center;
   align-items: center;
   height: 50px;
-  width: 60%;
-  margin: 0 20%;
+  width: auto;
+  margin: 0 25%;
   display: none;
 }
 #attempts {
@@ -235,7 +244,6 @@ h1 {
   display: inline-flex;
 }
 .box1 {
-  width: 20%;
   display: flex;
 }
 #gameResult {
