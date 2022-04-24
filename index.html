@@ -12,18 +12,18 @@
   <header>
     <div id="nav-bar">
       <h1>modanova</h1>
-      <div><a class='nav-link' onclick="document.getElementById('about-me').style.display='block'">About me</a></div>
-        <div><a class='nav-link' href="https://github.com/modanova">Git hub</a></div>
-        <div><a class='nav-link' href="https://www.freecodecamp.org/fccc4a08b08-2a71-473b-a264-a4fee7370f13">FreeCodeCamp</a></div>
+      <div><a class='nav-link' onclick="showMe('about-me')">about me</a></div>
+        <div><a class='nav-link' class="external" href="https://github.com/modanova">git hub</a></div>
+        <div><a class='nav-link' class="external" href="https://www.freecodecamp.org/fccc4a08b08-2a71-473b-a264-a4fee7370f13">freecodecamp</a></div>
       <div class="dropdown">
-        <button class='nav-link' class="dropbtn">Prompts</button>
+        <button class='nav-link' class="dropbtn">prompts</button>
         <div  id='dropdown-links' class="dropdown-content">
-          <a href="https://modanova.github.io/tribute-page/">Tribute page</a>
-          <a href="functions.html">Functions & Flexbox</a>
-          <a href="https://modanova.github.io/first/">Array Methods</a>
-          <a href="objects.html">Objects</a>
-          <a href="#string" onclick="document.getElementById('project1').style.display='block'">DOM: Username</a>
-          <a href="#project2" onclick="document.getElementById('project2').style.display='block'">Feature: Bulls&Cows game</a>
+          <a href="https://modanova.github.io/tribute-page/">tribute page</a>
+          <a href="functions.html">functions & flexbox</a>
+          <a class="external" href="https://modanova.github.io/first/">array methods</a>
+          <a href="objects.html">objects</a>
+          <a href="#string" onclick="showMe('project1')">dom: username</a>
+          <a href="#project2" onclick="showMe('project2')">feature: bulls&cows game</a>
         </div>
       </div>
       </div>
@@ -34,7 +34,7 @@
     <h4 class="title">A little bit about me...</h4>
     <div class="description">
       <p>	I am a highly motivated, reflective and hard-working individual, with growth mindset, always looking for professional development and inspired to strive for perfection. I have broad skills and experience in teaching but I am currently looking for an opportunity for a change of direction.</p>
-      <p>Front-end and programming have always been on my mind. A few years ago, I did try an online course on HTML/CSS but have not been able to make the transition successfully.</p>
+      <p>Front-end and programming have always been on my mind. A few years ago, I did try an online course exploring HTML/CSS but have not been able to fully immerse to make the transition successfully.</p>
       <p>Ever since school, I have been strong in Mathematics and Computing but these interests were somehow left unexplored when I chose to study German linguistics.</p>
       <p>Another of my childhood passions was drawing, which later on grew into an interest in web design and graphic image manipulation that I explored in my leisure time. I taught myself to use Photoshop and Gimp for image manipulation, e.g. creating cards for occasions or just for fun.</p>
       <p>Puzzles, riddles and problem solving are my idea for fun. </p>

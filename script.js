@@ -1,3 +1,13 @@
+function showMe(id) {
+  let element = '';
+  element = document.getElementById(id);
+  if (element.style.display == '' || element.style.display == 'none') {
+    element.style.display = 'block';
+  } else {
+    element.style.display = 'none';
+  }
+}
+
 //Enter Username JS
 function getInput() {
   var username = document.getElementById("string").value;
