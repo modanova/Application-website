@@ -1,5 +1,6 @@
 body {
-  background-color: #242424;
+  background-image: url('pic/pexels-alex-conchillos.jpg');
+  background-repeat: no-repeat;
   color: white;
   width: 80%;
   padding: 5px;
@@ -92,6 +93,9 @@ header {
   text-decoration: none;
   display: block;
 }
+#about-me {
+  display: block;
+}
 .description {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -110,9 +114,6 @@ header {
 h1 {
   flex: 2;
   font-family: 'Babylonica', cursive;
-}
-#about-me {
-  display: none;
 }
 #projects > h1 {
   font-size: 3em;

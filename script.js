@@ -1,9 +1,9 @@
 function showMe(id) {
   let element = '';
   element = document.getElementById(id);
-  if (element.style.display == '' || element.style.display == 'none') {
+  if (element.style.display == 'none' || element.style.display == '') {
     element.style.display = 'block';
-  } else {
+  } else if (element.style.display == 'block') {
     element.style.display = 'none';
   }
 }
@@ -232,7 +232,7 @@ function displayGameResult() {
   if (bullClue == 4) {
     let yourGame = document.getElementById("yourGame");
     yourGame.innerHTML = 'Hooray, ';
-    document.getElementById('gameResult').style.display = 'flex';    
+    document.getElementById('gameResult').style.display = 'flex';   
     document.getElementById("number-input").style.display = 'none';
   }
   if (round > 10 && bullClue != 4) {
@@ -240,6 +240,7 @@ function displayGameResult() {
     document.getElementById('gameResult').style.display = 'flex';
     document.getElementById("number-input").style.display = 'none';
   }
+  document.getElementById('hiddenNr').focus(); 
 }
 
 /* To Do 
